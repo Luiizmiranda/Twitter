@@ -19,6 +19,8 @@
     --color-singup:#0f5d8d;
     --color-bg-footer:#f5f4f4;
     --color-a-footer:#444;
+    --color-a-nav:#555;
+    
 }
 
 html{
@@ -35,10 +37,10 @@ body{
 .main-page{
     /*width: 100%;
     height: 100vh;*/
-    min-width: 300px;
+    min-width: 320px;
     max-width: 100%;
     height: 100vh;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2,1fr);/**/
     grid-template-rows: 1fr min-content;/**/
 }
@@ -212,3 +214,80 @@ background-color: var(--color-background-input);
 
 
 /*end of main page*/
+
+
+/*login page*/
+
+.login-page{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(5rem,1fr) 2fr minmax(5rem,1fr);
+    grid-template-rows: repeat(2,min-content) 1fr;
+    grid-row-gap: 1.5rem
+}
+
+/*login page nav*/
+.login-page-nav{
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    background-color: var(--color-white);
+    padding: 2.5rem 0;
+    box-shadow: 0 0 0.7 rgba(0, 0, 0, 0.3);
+}
+
+.login-page-nav ul{
+    width: 100rem;
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+}
+
+.login-page-nav li{
+    margin:  0 1rem;
+    position: relative;
+}
+
+.login-page-nav li:last-child{
+    margin-left: auto;
+}
+
+.login-page-nav li::after{
+    content: "";
+    width: 100%;
+    height: 0.4rem;
+    background-color: var(--color-primary);
+    position:absolute;
+    bottom: -2.5rem;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.login-page-nav li:hover::after{
+    opacity: 1;
+}
+
+.login-page-nav a{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--color-a-nav);
+    transition: color 0.3s;
+}
+
+.login-page-nav i {
+    color: var(--color-primary);
+    font-size: 2rem;
+}
+/*end of login page nav*/
+
+.login{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: var(--color-white);
+    width: 100rem;
+}
+
+/*end of login*/
+
+/*end of login page*/
